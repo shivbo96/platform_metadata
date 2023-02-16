@@ -1,3 +1,2 @@
 ## 0.0.1
-
-* TODO: Describe initial release.
+* Initial release, working base functionality with support to retrieve all metadata defined in AndroidManifest.xml or Info.plist .

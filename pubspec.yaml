@@ -1,10 +1,11 @@
-name: platform_metadata
+name: flutter_meta_data
 description: A flutter plugin which will help you to get metadata values defined in AndroidManifest.xml (Android) or info.plist (iOS).
 version: 0.0.1
-homepage:
+homepage: https://github.com/shivbo96/platform_metadata
+publish_to: 'https://www.pub.dev'
 
 environment:
-  sdk: '>=2.19.2 <3.0.0'
+  sdk: ">=2.18.0 <3.0.0"
   flutter: ">=2.5.0"
 
 dependencies:
