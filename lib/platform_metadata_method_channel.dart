@@ -10,8 +10,9 @@ class MethodChannelPlatformMetadata extends PlatformMetadataPlatform {
   final methodChannel = const MethodChannel('platform_metadata');
 
   @override
-  Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
-    return version;
+  Future<String?> getMetaDataValue(String mateDataName) async {
+    final metaDataValue =
+    await methodChannel.invokeMethod<String>('getMetaData', mateDataName);
+    return metaDataValue;
   }
 }

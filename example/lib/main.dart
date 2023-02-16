@@ -16,34 +16,25 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
-  final _platformMetadataPlugin = PlatformMetadata();
+  String _metaDataValue = '';
 
   @override
   void initState() {
+    getMetaData();
     super.initState();
-    initPlatformState();
   }
 
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    // We also handle the message potentially returning null.
+  Future<void> getMetaData() async {
+    String metaDataValue;
     try {
-      platformVersion =
-          await _platformMetadataPlugin.getPlatformVersion() ?? 'Unknown platform version';
+      metaDataValue = await PlatformMetadata.getMetaDataValue('meta_key') ?? '';
     } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
+      metaDataValue = 'Failed to get metaDataValue.';
     }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
     if (!mounted) return;
 
     setState(() {
-      _platformVersion = platformVersion;
+      _metaDataValue = metaDataValue;
     });
   }
 
@@ -52,10 +43,10 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('Meta Data Example'),
         ),
         body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+          child: Text('MetaData value: $_metaDataValue\n'),
         ),
       ),
     );

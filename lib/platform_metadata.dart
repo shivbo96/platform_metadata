@@ -2,7 +2,7 @@
 import 'platform_metadata_platform_interface.dart';
 
 class PlatformMetadata {
-  Future<String?> getPlatformVersion() {
-    return PlatformMetadataPlatform.instance.getPlatformVersion();
+  static Future<String?> getMetaDataValue(String metaDataName) {
+    return PlatformMetadataPlatform.instance.getMetaDataValue(metaDataName);
   }
 }

@@ -9,7 +9,7 @@ class MockPlatformMetadataPlatform
     implements PlatformMetadataPlatform {
 
   @override
-  Future<String?> getPlatformVersion() => Future.value('42');
+  Future<String?> getMetaDataValue(metaDataName) => Future.value('meta_data');
 }
 
 void main() {
@@ -19,11 +19,11 @@ void main() {
     expect(initialPlatform, isInstanceOf<MethodChannelPlatformMetadata>());
   });
 
-  test('getPlatformVersion', () async {
-    PlatformMetadata platformMetadataPlugin = PlatformMetadata();
+  test('getMetaData', () async {
     MockPlatformMetadataPlatform fakePlatform = MockPlatformMetadataPlatform();
     PlatformMetadataPlatform.instance = fakePlatform;
 
-    expect(await platformMetadataPlugin.getPlatformVersion(), '42');
+    expect(await PlatformMetadata.getMetaDataValue('metaDataName'), 'meta_data');
   });
+
 }

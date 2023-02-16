@@ -23,7 +23,7 @@ abstract class PlatformMetadataPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getPlatformVersion() {
-    throw UnimplementedError('platformVersion() has not been implemented.');
+  Future<String?> getMetaDataValue(String mateDataName) {
+    throw UnimplementedError('getMetaData() has not been implemented.');
   }
 }
