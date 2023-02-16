@@ -74,3 +74,9 @@ Future<void> getMetaData() async {
 
 <img src="https://raw.githubusercontent.com/shivbo96/platform_metadata/main/images/ios.png" width="250" height="480">
 <img src="https://raw.githubusercontent.com/shivbo96/platform_metadata/main/images/android.png" width="250" height="480">
+
+
+## More information
+
+[Pub package](https://pub.dartlang.org/packages/platform_metadata)
+[Flutter documentation](https://flutter.io/).
