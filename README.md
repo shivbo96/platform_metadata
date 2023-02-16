@@ -69,7 +69,7 @@ Future<void> getMetaData() async {
 
 ```
 
-# for example refer to [example/lib/main.dart](https://github.com/shivbo96/platform_metadata)
+### for example refer to [example/lib/main.dart](https://github.com/shivbo96/platform_metadata)
 
 ## screenshots
 
