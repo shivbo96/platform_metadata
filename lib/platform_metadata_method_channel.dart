@@ -12,7 +12,7 @@ class MethodChannelPlatformMetadata extends PlatformMetadataPlatform {
   @override
   Future<String?> getMetaDataValue(String mateDataName) async {
     final metaDataValue =
-    await methodChannel.invokeMethod<String>('getMetaData', mateDataName);
+        await methodChannel.invokeMethod<String>('getMetaData', mateDataName);
     return metaDataValue;
   }
 }
