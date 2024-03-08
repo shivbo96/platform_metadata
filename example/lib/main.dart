@@ -25,16 +25,17 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> getMetaData() async {
-    String metaDataValue;
+    dynamic metaDataValue;
     try {
-      metaDataValue = await PlatformMetadata.getMetaDataValue('meta_key') ?? '';
+      metaDataValue =
+          await PlatformMetadata.getMetaDataValue('CFBundleURLTypes');
     } on PlatformException {
       metaDataValue = 'Failed to get metaDataValue.';
     }
     if (!mounted) return;
 
     setState(() {
-      _metaDataValue = metaDataValue;
+      _metaDataValue = metaDataValue.toString();
     });
   }
 
