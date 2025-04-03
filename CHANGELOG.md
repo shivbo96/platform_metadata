@@ -3,3 +3,6 @@
 
 ## 0.0.2
 * updated readme file
+
+## 0.0.2+1
+* updated readme file
