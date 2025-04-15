@@ -23,7 +23,7 @@ abstract class PlatformMetadataPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getMetaDataValue(String mateDataName) {
+  Future<dynamic> getMetaDataValue(String mateDataName) {
     throw UnimplementedError('getMetaData() has not been implemented.');
   }
 }

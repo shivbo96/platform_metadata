@@ -10,9 +10,11 @@ class MethodChannelPlatformMetadata extends PlatformMetadataPlatform {
   final methodChannel = const MethodChannel('platform_metadata');
 
   @override
-  Future<String?> getMetaDataValue(String mateDataName) async {
-    final metaDataValue =
-        await methodChannel.invokeMethod<String>('getMetaData', mateDataName);
+  Future<dynamic> getMetaDataValue(String mateDataName) async {
+    final metaDataValue = await methodChannel.invokeMethod<dynamic>(
+      'getMetaData',
+      mateDataName,
+    );
     return metaDataValue;
   }
 }
